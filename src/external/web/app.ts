@@ -1,6 +1,6 @@
 // this shim is required
 import { createExpressServer } from 'routing-controllers';
-import { UserController } from '@src/UserController';
+import { UserController } from '@src/application/use-case/user-controller'
 
 // creates express app, registers all controller routes and returns you express app instance
 const app = createExpressServer({

@@ -6,6 +6,7 @@ import { HealthController } from '@src/application/controllers/health'
 import { TsyringeAdapter } from '@src/external/config/container';
 import { logger } from '@src/external/utils/logger';
 import { bootstrap } from './bootstrap'
+import { setupSwagger } from './swagger'
 
 const port = 3000
 const app = createExpressServer({
@@ -13,6 +14,7 @@ const app = createExpressServer({
 });
 
 useContainer(new TsyringeAdapter(container))
+setupSwagger(app)
 
 app.on('error', (error: Error) => logger.error({ error }))
 

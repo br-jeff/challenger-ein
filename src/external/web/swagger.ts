@@ -8,8 +8,6 @@ import { getMetadataArgsStorage } from 'routing-controllers'
 import { routingControllersToSpec } from 'routing-controllers-openapi'
 import { serve, setup } from 'swagger-ui-express'
 import YAML from 'yaml'
-import { container } from 'tsyringe'
-import { logger } from '@src/external/utils/logger';
 
 export async function setupSwagger(app: Express): Promise<void> {
     const storage = getMetadataArgsStorage()
